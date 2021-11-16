@@ -28,7 +28,13 @@ ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score)) + geom_point() +
   na.rm = FALSE,
   show.legend = NA,
   inherit.aes = TRUE) +
-  labs(x = "% white population in census tract", y = "CalEnviroScreen 3.0 Score", caption = "Table 1: Percent white population per census tract vs. CalEnviroScreen 3.0 Score; Data: Mah (2017)") +
-  scale_fill_gradient(low = "coral1", high = "brown") + #added fill color gradient (cm)
+  labs(x = "% white population in census tract", y = "CalEnviroScreen 3.0 Score", caption = "Figure 1: Percent white population per census tract vs. CalEnviroScreen 3.0 Score; Data: Mah (2017)") +
+  scale_fill_gradient(low = "yellow", high = "brown") + #added fill color gradient (cm)
   theme_minimal() # added theme minimal
 ```
+
+Communities with high CalEnviroScreen 3.0 scores are communities that have high pollution burdens and vulnerable population characteristics that make these communities more vulnerable to pollutants. In Figure 1, we see that majority white communities have much lower CalEnviroScreen 3.0 scores. Communities with much lower percentage of white population suffer a much higher CalEnviroScreen 3.0 score. Based on this data, communities with a higher percentage of people of color will suffer worse pollution burdens and vulnerabilities to pollution. 
+
+**Data citation:** California Office of Environmental Health Hazard Assessment. (2018)
+(Not sure if this is the best citation.. might change)
+
