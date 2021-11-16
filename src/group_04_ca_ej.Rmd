@@ -17,11 +17,6 @@ library(hexbin)
 ces <- read_csv(here("data", "ces3demographics.csv")) %>% 
   janitor::clean_names() 
 ```
-```{r}
-# adding a new code chunk with a basic ggplot2 scatter plot graph 
-
-ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score)) + geom_point()
-```
 
 ```{r}
 # adding a new code chunk with a basic ggplot2 scatter plot graph 
@@ -32,7 +27,8 @@ ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score)) + geom_point() +
   stat = "binhex",
   na.rm = FALSE,
   show.legend = NA,
-  inherit.aes = TRUE,
- ) +
-  labs(x = "% white population in census tract", y = "CalEnviroScreen 3.0 Score")
+  inherit.aes = TRUE) +
+  labs(x = "% white population in census tract", y = "CalEnviroScreen 3.0 Score") +
+  scale_fill_gradient(low = "coral1", high = "brown") + #added fill color gradient (cm)
+  theme_minimal() # added theme minimal
 ```
