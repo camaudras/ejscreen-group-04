@@ -1,6 +1,6 @@
 ---
 title: "Group 04 CA pollution burden"
-author: "Cam Audras"
+author: "Cam Audras and Claire Meuter"
 date: "11/15/2021"
 output: html_document
 ---
@@ -10,10 +10,24 @@ knitr::opts_chunk$set(echo = TRUE)
 library(here)
 library(tidyverse)
 library(janitor)
+library(hexbin)
 ```
 
 ```{r}
 ces <- read_csv(here("data", "ces3demographics.csv")) %>% 
-  janitor::clean_names()
+  janitor::clean_names() 
 ```
 
+```{r}
+# adding a new code chunk with a basic ggplot2 scatter plot graph 
+ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score)) + geom_point() +
+ geom_hex(
+  mapping = NULL,
+  data = NULL,
+  stat = "binhex",
+  na.rm = FALSE,
+  show.legend = NA,
+  inherit.aes = TRUE,
+ ) +
+  labs(x = "% white population in census tract", y = "CalEnviroScreen 3.0 Score")
+```
