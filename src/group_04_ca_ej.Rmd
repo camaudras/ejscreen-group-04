@@ -17,6 +17,11 @@ library(hexbin)
 ces <- read_csv(here("data", "ces3demographics.csv")) %>% 
   janitor::clean_names() 
 ```
+```{r}
+# adding a new code chunk with a basic ggplot2 scatter plot graph 
+
+ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score)) + geom_point()
+```
 
 ```{r}
 # adding a new code chunk with a basic ggplot2 scatter plot graph 
