@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 library(here)
 library(tidyverse)
 library(janitor)
@@ -28,7 +28,7 @@ ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score)) + geom_point() +
   na.rm = FALSE,
   show.legend = NA,
   inherit.aes = TRUE) +
-  labs(x = "% white population in census tract", y = "CalEnviroScreen 3.0 Score") +
+  labs(x = "% white population in census tract", y = "CalEnviroScreen 3.0 Score", caption = "Table 1: Percent white population per census tract vs. CalEnviroScreen 3.0 Score; Data: Mah (2017)") +
   scale_fill_gradient(low = "coral1", high = "brown") + #added fill color gradient (cm)
   theme_minimal() # added theme minimal
 ```
